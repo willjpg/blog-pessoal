@@ -45,23 +45,25 @@ public class UsuarioController {
 		.orElse(ResponseEntity.notFound().build());
 		
 	}
-	
 	@PostMapping("/cadastrar")
 	public ResponseEntity <Usuario> postUsuario(@Valid@RequestBody Usuario usuario){
 		return usuarioService.cadastrarUsuario(usuario)
-				.map(resposta -> ResponseEntity.status(HttpStatus.CREATED).body(resposta))//função lambda
-				.orElse(ResponseEntity.badRequest().build());
+		.map(resposta -> ResponseEntity.status(HttpStatus.CREATED).body(resposta))//função lambda
+		.orElse(ResponseEntity.badRequest().build());
+		
 	}
 	@PutMapping("/atualizar")
 	public ResponseEntity <Usuario> putUsuario(@Valid@RequestBody Usuario usuario){
 		return usuarioService.atualizarUsuario(usuario)
-				.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))//função lambda
-				.orElse(ResponseEntity.notFound().build());
+		.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))//função lambda
+		.orElse(ResponseEntity.notFound().build());
+		
 	}
 	@PostMapping("/logar")
 	public ResponseEntity <UsuarioLogin> loginUsuario(@RequestBody Optional<UsuarioLogin> usuarioLogin){
 		return usuarioService.autenticarUsuario(usuarioLogin)
-				.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))//função lambda
-				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
+		.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))//função lambda
+		.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
+		
 	}
 }
