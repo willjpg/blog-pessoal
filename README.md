@@ -15,7 +15,7 @@
 
 
 <H2 id="about">📙 Sobre</H2>
-API REST Java do blog pessoal  
+API REST Java do blog pessoal construído durante o bootcamp da Generation Brasil.  
 
 
 ---
@@ -29,6 +29,7 @@ API REST Java do blog pessoal
   <li>Spring Security</li>
   <li>Criptografia ascii</li>
   <li>Swagger</li>
+  <li>JUnit</li>
 </ul>
 
 
